@@ -1,14 +1,27 @@
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Home – Mohamed Ghazouan",
+  description:
+    "Full‑stack developer based in Marrakech, building web applications and AI‑powered tools with React, Laravel, Python, and RAG.",
+};
+
+
 export default function ContactPage() {
   return (
     <section className="space-y-4">
       <h1 className="text-2xl font-semibold tracking-tight">Contact</h1>
       <p className="text-sm text-slate-300">
-        The fastest way to reach me is by email or LinkedIn.
+        If you&apos;d like to talk about a role, a freelance project, or my work, feel free to reach out.
       </p>
+
       <ul className="space-y-2 text-sm">
         <li>
           Email:{" "}
-          <a className="text-sky-400 underline" href="mailto:ghezouanmohamed02@gmail.com">
+          <a
+            className="text-sky-400 underline"
+            href="mailto:ghezouanmohamed02@gmail.com"
+          >
             ghezouanmohamed02@gmail.com
           </a>
         </li>
@@ -25,9 +38,14 @@ export default function ContactPage() {
         </li>
         <li>
           GitHub:{" "}
-          <span className="text-slate-400">
-            (add URL here once your repo is ready)
-          </span>
+          <a
+            className="text-sky-400 underline"
+            href="https://github.com/..."
+            target="_blank"
+            rel="noreferrer"
+          >
+            (add your GitHub username here)
+          </a>
         </li>
       </ul>
     </section>

@@ -1,0 +1,62 @@
+---
+title: "ARCA – AI Regulatory Compliance Agent"
+slug: "arca-regulatory-compliance-agent"
+locale: "en"
+date: "2025-11-01"
+summary: "Multi-agent AI system that analyzes regulations and detects inconsistencies with internal policies using RAG."
+role: "AI & backend developer"
+stack: ["Python", "FastAPI", "LangChain", "RAG", "FAISS"]
+tags: ["RAG", "Multi‑agent", "Compliance"]
+repoUrl: ""
+demoUrl: ""
+coverImage: "/images/projects/arca-cover.png"
+---
+
+## Overview
+
+ARCA (AI Regulatory Compliance Agent) is a multi-agent system designed to analyze regulatory documents
+and detect inconsistencies with internal company policies.
+
+I worked on the AI and backend side: RAG pipeline design, agents coordination, and API exposure.
+
+## Problem
+
+- Companies need to check if internal policies comply with complex regulations.
+- Manual review is slow, error-prone, and difficult to scale.
+- We needed a system that could read regulations and internal documents, highlight potential conflicts,
+  and be accessible via an API.
+
+## Solution
+
+**Architecture**
+
+- Built a RAG pipeline:
+  - Ingestion and chunking of regulations and internal policy documents.
+  - Embeddings stored in FAISS for fast similarity search.
+  - Retriever + LLM to generate grounded answers with relevant citations.
+
+- Designed a multi‑agent workflow:
+  - One agent focuses on understanding the regulation.
+  - Another evaluates internal policies.
+  - A coordinator agent compares both and flags potential inconsistencies.
+
+**Implementation highlights**
+
+- Implemented the API with FastAPI to expose endpoints for:
+  - Uploading/refreshing documents.
+  - Querying regulations.
+  - Getting a compliance analysis report.
+- Used LangChain to orchestrate RAG components and agent behavior.
+- Added basic logging and error handling to monitor queries and failures.
+
+## Results
+
+- ARCA can produce a structured report highlighting where internal policies may conflict with regulations.
+- The system reduces manual reading and gives a starting point for legal/compliance teams.
+- The architecture is modular: new data sources or agents can be added without rewriting the core.
+
+## Learnings & next steps
+
+- Learned how to design multi‑agent workflows on top of a RAG backbone.
+- Improved understanding of trade‑offs in document chunking, retrieval, and prompt design.
+- Next steps: add a UI dashboard, better evaluation metrics, and more robust document management.

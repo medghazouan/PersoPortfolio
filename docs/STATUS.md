@@ -1,82 +1,86 @@
-# Portfolio – Project Status
+# Portfolio – Status (Updated)
 
 **Owner:** Mohamed Ghazouan  
-**Stack:** Next.js (App Router) + TypeScript + Tailwind + MDX  
-**Last update:** 2026-02-10
+**Stack:** Next.js (App Router) + TypeScript + Tailwind CSS v4 + MDX  
+**Languages:** EN first, FR next (planned)  
+**Last update:** 2026-02-11
 
 ---
 
-## 1) What is already done
+## Done ✅
 
-### Project setup
-- Next.js project created with TypeScript and Tailwind.
-- Git repo initialized and basic structure in place.
-
-### Layout & navigation
-- Global layout with header and footer.
-- Main navigation working:
-  - `/` (Home)
+### Core app & navigation
+- Next.js project running (App Router).
+- Pages working:
+  - `/` Home
   - `/projects`
+  - `/projects/[slug]`
   - `/about`
   - `/contact`
+- Global layout (header/footer) and navigation working.
 
-### Home page
-- Hero section describing positioning:
-  - Full‑stack developer (React/Laravel) + applied AI (RAG, LangChain, LangGraph).
-- Featured work preview cards:
-  - BIDAYALAB – RAG Chatbot.
-  - ARCA – Compliance Agent.
-  - Delivery Management App.
+### Projects (MDX)
+- `content/projects/*` created.
+- Dynamic route `/projects/[slug]` renders MDX case studies.
+- Fixed Next.js 15 params Promise issue by awaiting `params` before reading `slug`.
 
-### Projects system (MDX)
-- MDX support configured.
-- `content/projects` directory created.
-- Dynamic route `/projects/[slug]` implemented.
-- First project (e.g. `bidayalab.en.mdx`) loads correctly via slug.
+### Tailwind v4 setup
+- Using Tailwind v4 CSS-first setup.
+- `app/globals.css` uses `@import "tailwindcss"` (no `@tailwind base/components`).
+- Decision: **No `tailwind.config.ts`** (theme handled with CSS variables in `globals.css`). 
 
----
-
-## 2) What is in progress
-
-- Finalizing the MDX content model for projects (frontmatter + body sections).
-- Writing real content for the BIDAYALAB case study (Overview / Problem / Solution / Results / Learnings).
-- Planning ARCA and Delivery App case studies using the same structure.
+### Brand direction
+- Dark look chosen.
+- Palette direction: warm dark neutrals + logo greige as primary + one accent for links/CTA.
 
 ---
 
-## 3) Next steps (short term)
+## In progress 🟡
 
-1. **Complete 3 EN case studies**
-   - Fill `bidayalab.en.mdx` with real text.
-   - Create `arca.en.mdx` and `delivery.en.mdx` with:
-     - Frontmatter (title, slug, summary, stack, role, date).
-     - Sections: Overview, Problem, Solution, Results, Learnings.
+### UI (dark theme)
+- Adding CSS variables tokens in `globals.css`:
+  - `--bg`, `--surface`, `--border`, `--text`, `--muted`, `--primary`, `--accent`
+- Replacing old `bg-slate-*` and `text-slate-*` with token-based classes:
+  - `bg-[color:var(--bg)]`, `text-[color:var(--text)]`, etc.
+- Polishing Home and Projects layout (spacing, typography, cards, CTA).
 
-2. **Improve Projects index**
-   - Read all project metas and render them in `/projects` with:
-     - Title, summary, stack, “View case study” link.
+### Case study content
+- Completing EN content for 3 projects:
+  - BIDAYALAB
+  - ARCA
+  - Delivery app
+- Adding cover image + 1–3 screenshots per case study.
 
-3. **Refine About & Contact**
-   - About: add brief bio + timeline + key tech stack.
-   - Contact: add final GitHub URL + maybe a short “I’m currently looking for…” line.
-
----
-
-## 4) Next steps (medium term)
-
-- Add basic SEO metadata per page (title/description + Open Graph).
-- Decide default locale (EN or FR) and prepare i18n routing for `/en` and `/fr`.
-- Create `PROJECT_SCOPE.md` (already drafted) as the main design/spec doc and keep it updated.
+### SEO
+- Metadata being applied globally and per page.
+- `metadataBase` still placeholder until deployment URL/domain is set.
 
 ---
 
-## 5) Definition of “MVP done”
+## Next (priority order) 🔥
 
-The MVP of the portfolio will be considered **done** when:
+1) **Finish the dark UI pass (Home + Projects first)**
+- Apply token colors everywhere (layout, cards, buttons, links).
+- Ensure readability and consistent spacing.
 
-- Home, Projects, About and Contact pages are live and styled.
-- At least **3 project case studies** are available in English with:
-  - Clear problem, solution, results, and your role.
-- All navigation works on desktop and mobile.
-- Contact info (email, LinkedIn, GitHub) is reachable in 1 click from anywhere.
-- The site is deployed (e.g. on Vercel) and loads without errors.
+2) **Finalize the 3 EN case studies**
+- Each includes: Overview, Problem, Solution, Results, Learnings + links.
+
+3) **Deploy MVP**
+- Push to GitHub and deploy on Vercel.
+- Test all routes on production.
+
+4) **Add FR (phase 1)**
+- Set up `/[locale]/...` routing + language switcher.
+- Translate: Home/About/Contact first.
+- Case studies: EN full + FR summary (then full FR later).
+
+---
+
+## MVP Definition of Done (v1)
+- Live deployment.
+- Dark UI finished and consistent.
+- Projects page lists 3 case studies.
+- 3 EN case studies published and readable.
+- Contact links accessible in 1 click.
+- Basic SEO metadata present.

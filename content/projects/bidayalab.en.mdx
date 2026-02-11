@@ -1,37 +1,55 @@
 ---
-title: "BIDAYALAB – RAG Chatbot Integration"
+title: "BIDAYALAB – RAG Chatbot Integration & Production Fixes"
 slug: "bidayalab-rag-chatbot"
 locale: "en"
 date: "2025-10-01"
-summary: "Integrated a RAG-based chatbot and fixed build & deployment issues for a digital agency website."
+summary: "Integrated an intelligent RAG-based chatbot and fixed build & deployment issues for a digital agency website."
 role: "Full‑stack & AI developer"
 stack: ["Next.js", "React", "RAG", "LangChain", "Vector DB"]
 tags: ["RAG", "LLM", "Full‑stack"]
-repoUrl: ""
-demoUrl: ""
+repoUrl: "https://www.bidayalab.com/"        # add if public
+demoUrl: ""        # add if you have one
 coverImage: "/images/projects/bidayalab-cover.png"
 ---
 
 ## Overview
 
-Short TL;DR about the project (1–2 paragraphs).
-What BIDAYALAB is, what the chatbot does, and your role.
+BIDAYALAB is a digital agency website where I was responsible for fixing production build issues
+and integrating an AI-powered chatbot based on a Retrieval-Augmented Generation (RAG) pipeline.
+
+The goal was to make the site stable in production and provide a chatbot that could answer
+questions using the agency’s own content instead of generic answers.
 
 ## Problem
 
-Explain the initial state: existing website with build issues, need for an intelligent chatbot,
-constraints (time, stack, hosting).
+- The existing site had build errors that blocked deployment to production.
+- The client wanted a chatbot that could answer questions about services and content, without exposing internal systems.
+- The solution needed to be maintainable and not slow down the main site.
 
 ## Solution
 
-Describe the architecture: where the chatbot lives, how RAG is wired (retriever, embeddings, vector store),
-how it connects to the frontend, how you fixed the build/deploy pipeline.
+**Architecture**
+
+- Set up a RAG pipeline with:
+  - Document ingestion and chunking.
+  - Embeddings stored in a vector database.
+  - A retriever + LLM that generates answers grounded in the retrieved chunks.
+- Exposed the chatbot via an API endpoint and integrated it on the frontend as a chat widget.
+
+**Implementation highlights**
+
+- Fixed build errors by reviewing dependencies, environment variables, and build scripts until the site deployed successfully.
+- Implemented the chat UI in React, calling the RAG backend endpoint for each user message.
+- Added basic loading/error states and constraints on message length to keep the UX smooth.
 
 ## Results
 
-Concrete outcomes: site deployed successfully, chatbot responds with relevant answers,
-reduced manual support, etc.
+- The site now builds and deploys correctly to production.
+- The chatbot can answer questions using the agency’s content instead of generic LLM answers.
+- The client can demo the chatbot live on their own website.
 
 ## Learnings & next steps
 
-What you learned technically (RAG design, deployment debugging) and what you'd improve later.
+- Learned how to debug production build issues and environment problems in a real project.
+- Gained experience designing a practical RAG pipeline and integrating it into an existing site.
+- Next steps: add analytics on questions asked, improve retrieval quality, and experiment with cost/latency optimizations.

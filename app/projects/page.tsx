@@ -1,6 +1,13 @@
 // app/projects/page.tsx
 import Link from "next/link"
 import { getAllProjectsMeta } from "@/lib/content"
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Projects – Mohamed Ghazouan",
+  description:
+    "Selected projects including a RAG chatbot integration, an AI regulatory compliance agent (ARCA), and a delivery management web app.",
+};
 
 export default function ProjectsPage() {
   const projects = getAllProjectsMeta("en")

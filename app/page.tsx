@@ -1,5 +1,12 @@
 // app/page.tsx
 import Link from "next/link";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Home – Mohamed Ghazouan",
+  description:
+    "Full‑stack developer based in Marrakech, building web applications and AI‑powered tools with React, Laravel, Python, and RAG.",
+};
 
 export default function HomePage() {
   return (

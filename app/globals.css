@@ -1,9 +1,22 @@
 @import "tailwindcss";
 
+/* Dark palette (logo-inspired warm neutrals) */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  color-scheme: dark;
+
+  --bg: #0b0b0a;
+  --surface: #111110;
+  --surface2: #161514;
+  --border: #2a2926;
+
+  --text: #f2f1ed;
+  --muted: #b7b2a6;
+  --subtle: #8e8a81;
+
+  --primary: #d8d4c9; /* your logo greige */
+  --accent: #3b82f6;  /* links/CTA */
 }
+
 
 @theme inline {
   --color-background: var(--background);

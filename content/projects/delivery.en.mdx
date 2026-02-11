@@ -1,0 +1,60 @@
+---
+title: "Delivery Management Web App – React & Laravel"
+slug: "delivery-management-app"
+locale: "en"
+date: "2025-06-01"
+summary: "Full delivery management web application with order intake, real-time tracking, and driver management."
+role: "Full‑stack developer"
+stack: ["React", "Laravel", "MySQL"]
+tags: ["Full‑stack", "Delivery", "CRUD"]
+repoUrl: ""
+demoUrl: ""
+coverImage: "/images/projects/delivery-cover.png"
+---
+
+## Overview
+
+This project is a full delivery management web application that handles orders, live tracking,
+and driver management.
+
+I built the frontend with React and the backend with Laravel + MySQL.
+
+## Problem
+
+- The client needed a way to manage deliveries end‑to‑end:
+  - Create and track orders.
+  - Assign drivers.
+  - Monitor status in real time.
+- Existing tools were manual (spreadsheets, messages) and hard to follow.
+
+## Solution
+
+**Architecture**
+
+- Frontend: React SPA for dashboards and forms.
+- Backend: Laravel API with authentication, business logic, and MySQL database.
+- Data model: orders, customers, drivers, delivery status, tracking events.
+
+**Implementation highlights**
+
+- Built React screens for:
+  - Creating and editing orders.
+  - Listing orders with filters (status, date, driver).
+  - Viewing order details and status timeline.
+- Implemented Laravel routes/controllers for:
+  - CRUD operations on orders and drivers.
+  - Status updates and tracking events.
+- Set up MySQL schema and relationships (orders ↔ drivers, etc.).
+- Added basic real-time updates using polling or lightweight push mechanism.
+
+## Results
+
+- The app centralizes orders, drivers, and statuses in a single interface.
+- It makes it easier to see which deliveries are pending, in progress, or completed.
+- The stack (React + Laravel + MySQL) is familiar for many teams, so it’s easy to maintain.
+
+## Learnings & next steps
+
+- Strengthened full‑stack skills: designing DB schemas and APIs that match the UI.
+- Practiced handling data consistency and status transitions across frontend and backend.
+- Next steps: better real‑time tracking, role‑based permissions, and more detailed analytics.
